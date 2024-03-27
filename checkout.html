@@ -20,9 +20,11 @@
 
         <!-- Product Information -->
         <div class="row">
-            <div class="col-md-6">
-                <h3>Informações do produto</h3>
-                <div id="product-info"></div>
+            <div class="col-md-6 mx-auto">
+                <div class="product-info-container text-center">
+                    <h3 class="col-md-6">Informações do produto</h3>
+                    <div id="product-info"></div>
+                </div>
             </div>
 
             <!-- Address Information -->
@@ -83,7 +85,7 @@
 
         fetchAddressBtn.addEventListener('click', function () {
             const cep = cepInput.value;
-            if (cep.length !== 8) {
+            if (cep.length !== 8) { 
                 addressResult.textContent = 'CEP inválido. Certifique-se de inserir 8 dígitos.';
                 return;
             }

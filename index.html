@@ -13,9 +13,10 @@
     <nav class="navbar navbar-dark bg-dark text-white">
         <h1>Bem-vindo à Galáxia das Compras!</h1>
     </nav>
-    
-    
-    <div id="product-list"></div>
+
+    <div class="container d-flex justify-content-center"> <!-- Adicionando classe container e flexbox -->
+        <div id="product-list" class="row"></div> <!-- Adicionando classe row para produtos -->
+    </div>
 
     <script>
         // Use JavaScript para fazer uma requisição à Fake Store API e exibir os produtos na página.
@@ -25,7 +26,7 @@
                 const productList = document.getElementById('product-list');
                 data.forEach(product => {
                     const productDiv = document.createElement('div');
-                    productDiv.classList.add('col-md-4', 'mb-4');
+                    productDiv.classList.add('col-md-3', 'mb-4');
 
                     productDiv.innerHTML = `
                     <div class="card">
@@ -34,10 +35,9 @@
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">${product.title}</h5>
-                            <p class="card-text">${product.description}</p>
                             <p class="card-text"><strong>$${product.price}</strong></p>
                         </div>
-                        <div class="card-footer">
+                        <div class="card-footer action">
                             <a href="produto.html?produto_id=${product.id}"class="btn btn-primary">Comprar</a>  
                         </div>
                     </div>`;
